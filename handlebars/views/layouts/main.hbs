@@ -1,0 +1,56 @@
+{{!-- <h3>Estos son los productos mas caros</h3>
+{{>expensiveproducts}}
+<br>
+<h3>Estos son los productos mas economicos</h3>
+{{>economicproducts}}
+
+{{#if showp}}
+  <div style="display:flex; flex-wrap:wrap; padding: 5px; background-color:darkslategray">
+    {{#each products}}
+        <div>
+            <div style="height: 250px; width:250px; margin:16px;">
+                <img src={{this.imagen}} alt={{this.id}} style="width:100%; min-height:100%; max-height:100%; border-radius:25px">
+            </div>
+            <h4 style="font-family: monospace; text-aling: center; font-size:large;color:whitesmoke">{{this.nombre}}</h4>
+        </div>
+    {{/each}}
+  </div>
+{{/if}} --}}
+
+
+{{!-- <div> --}}
+      <form class="row g-3 m-5" action='/productos' method='post'>
+        <div class="col-md-8">
+          {{!-- <label for="nombre" class="form-label">title</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Nombre del producto"> --}}
+
+		  <label for='nombre' class="form-label">Title</label>
+		  <input type='text'class="form-control" name='nombre' id='nombre' />
+
+        </div>
+        <div class="col-8">
+          {{!-- <label for="precio" class="form-label">price</label>
+          <input type="text" class="form-control" id="precio" placeholder="Precio del producto"> --}}
+
+          <label for='precio' class="form-label">Precio</label>
+		  <input type='text'class="form-control" name='precio' id='precio' />
+        </div>
+        <div class="col-8">
+          {{!-- <label for="thumbnail" class="form-label">thumbnail</label>
+          <input type="text" class="form-control" id="thumbnail" placeholder="Ruta imagen del producto"> --}}
+
+          <label for='imagen' class="form-label">Imagen</label>
+		  <input type='text' class="form-control" name='imagen' id='imagen' />
+
+        </div>
+        <div class="col-12">
+          {{!-- <button type="submit" class="btn btn-primary">Submit</button> --}}
+          <input type='submit' class="btn btn-primary" value='submit' />
+        </div>
+        <div>
+            <a href='/productos'>Show all Products</a>
+        </div>
+
+
+      </form>
+{{!-- </div> --}}
