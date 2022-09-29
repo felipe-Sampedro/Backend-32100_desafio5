@@ -1,0 +1,20 @@
+
+html
+    body
+        div
+        #productos
+            if productos
+                table
+                    tr
+                        th Nombre
+                        th Precio
+                        th Imagen
+                    each producto in productos
+                        tr
+                            td= producto.nombre
+                            td= producto.precio
+                            td
+                                img(src=producto.imagen style="width: 50px;")
+            else
+                span No hay productos para mostrar
+        a(href='/') Agregar Producto
